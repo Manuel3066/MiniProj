@@ -21,7 +21,6 @@ public class Staff {
 
 	public Staff() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Staff(int id, String staffName, String staffPosition) {

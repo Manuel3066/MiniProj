@@ -1,12 +1,15 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +27,18 @@ public class Events {
 	private int occupancy;
 	@Column(name = "EVENT_PRICE")
 	private double price;
+	@ManyToOne
+	@JoinColumn(name="STAFF_ID")
+	private Staff staff;
 	
+	public Staff getStaff() {
+		return staff;
+	}
+
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+
 	public Events() {
 		super();
 	}
@@ -38,6 +52,15 @@ public class Events {
 		this.price = price;
 	}
 
+	public Events(Staff staff, String eventName, LocalDate eventDate, int occupancy, double price) {
+		super();
+		this.staff = staff;
+		this.eventName = eventName;
+		this.eventDate = eventDate;
+		this.occupancy = occupancy;
+		this.price = price;
+	}
+	
 	public Events(String eventName, LocalDate eventDate, int occupancy, double price) {
 		super();
 		this.eventName = eventName;
@@ -89,6 +112,6 @@ public class Events {
 	@Override
 	public String toString() {
 		return "Events [id=" + id + ", eventName=" + eventName + ", eventDate=" + eventDate + ", occupancy=" + occupancy
-				+ ", price=" + price + "]";
+				+ ", price=" + price + ", staff=" + staff + "]";
 	}
 }
