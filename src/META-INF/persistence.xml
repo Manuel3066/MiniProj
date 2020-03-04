@@ -6,7 +6,6 @@
 		<class>model.Staff</class>
 		<class>model.Events</class>
 =======
-		<class>model.ListItem</class>
 >>>>>>> branch 'master' of https://github.com/PaulSpuzello/MiniProj.git
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
