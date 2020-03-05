@@ -19,10 +19,10 @@ static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("
 		em.close();
 	}
 	
-	//public List<Staff> getLists() {
-		//EntityManager em = emfactory.createEntityManager();
-		//List<Staff> allStaff = em.createQuery("SELECT d FROM Staff d").getResultList();
-		//return allStaff;
-	//}
+	public List<Staff> getLists() {
+		EntityManager em = emfactory.createEntityManager();
+		List<Staff> allStaff = em.createQuery("SELECT s FROM Staff s").getResultList();
+		return allStaff;
+	}
 
 }

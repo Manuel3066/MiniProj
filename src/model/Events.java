@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Events {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "STAFF_ID")
+	@Column(name = "EVENT_ID")
 	private int id;
 	@Column(name = "EVENT_NAME")
 	private String eventName;
@@ -27,8 +27,6 @@ public class Events {
 	private int occupancy;
 	@Column(name = "EVENT_PRICE")
 	private double price;
-	@ManyToOne
-	@JoinColumn(name="STAFF_ID")
 	private Staff staff;
 	
 	public Staff getStaff() {
