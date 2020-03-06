@@ -21,19 +21,16 @@ public class StaffTester {
 		Staff john = new Staff("John", "Janitor");
 		Staff henry = new Staff("Henry", "Lighting");
 
-		List<Staff>JumpStaff = new ArrayList<Staff>();
+		List<Staff> JumpStaff = new ArrayList<Staff>();
 		JumpStaff.add(john);
 		JumpStaff.add(henry);
-		
-		Staff_In_Events StaffList = new Staff_In_Events();
 
-		henrysEvent.setListOfStaff
-		EventHelper eh = new EventHelper();
-		Staff johnList = new Staff();
+		LocalDate d = LocalDate.of(2015, 12, 22);
+		Staff_In_Events StaffList = new Staff_In_Events(5, 0, d, henry);
+
+		sh.insertStaff(JumpStaff);
 		
-		eh.insertNewStaffDetails(johnList);
-		
-		List<Staff> allStaff = eh.getLists();
+		List<Staff> allStaff = sh.showAllStaff();
 		
 		for (Staff a : allStaff) {
 			System.out.println(a.toString());
